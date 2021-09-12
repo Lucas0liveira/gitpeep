@@ -3,6 +3,7 @@ import { React, useState } from 'react';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import User from './components/User';
+import UserNotFound from './components/UserNotFound';
 import './App.scss';
 
 const BASE_URL = 'http://api.github.com/users/';
@@ -22,29 +23,56 @@ function App() {
       const searchResult = await axios.get(`${BASE_URL}${searchString}`);
       setUser(searchResult.data);
     } catch (error) {
-      setUser('');
+      setUser(null);
     }
+  }
+
+  function showUser() {
+    if (user === '') {
+      return (
+        <div className="text-center">
+          <h1 className="mt-4">Bem vindo ao GitPeep!</h1>
+          <h4 className="mt-3">
+            Aqui você pode dar uma espiadinha
+            nos projetos favoritos
+            e trabalhos mais recentes de seus colegas.
+          </h4>
+          <h1 className="mt-5">Comece procurando por um usuário</h1>
+
+          <SearchBar onSearch={handleSearch} />
+        </div>
+      );
+    }
+    return (
+      <div>
+        <SearchBar onSearch={handleSearch} />
+        <User
+          avatar={user.avatar_url}
+          login={user.login}
+          userUrl={user.html_url}
+          name={user.name}
+          location={user.location}
+          bio={user.bio}
+          reposQt={String(user.public_repos)}
+          followersQt={String(user.followers)}
+          followingQt={String(user.following)}
+        />
+      </div>
+
+    );
   }
 
   return (
     <div className="container">
       <div className="app">
-        <SearchBar onSearch={handleSearch} />
-        {user === ''
-          ? <div>vazio</div>
-          : (
-            <User
-              avatar={user.avatar_url}
-              login={user.login}
-              url={user.url}
-              name={user.name}
-              location={user.location}
-              bio={user.bio}
-              reposQt={user.public_repos}
-              followersQt={user.followers}
-              followingQt={user.following}
-            />
-          )}
+        {user === null
+          ? (
+            <div>
+              <UserNotFound />
+              <SearchBar onSearch={handleSearch} />
+            </div>
+          )
+          : showUser()}
       </div>
     </div>
   );
