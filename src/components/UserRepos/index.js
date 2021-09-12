@@ -21,7 +21,7 @@ export default () => {
     }
 
     fetchRepos();
-  });
+  }, []);
 
   return (
     <div>
