@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
+import './styles.scss';
 
 export default (props) => {
   function handleSearch(event) {
@@ -10,19 +11,19 @@ export default (props) => {
 
   return (
     <form
-      className="row"
+      className="search"
       action="/"
       method="get"
       onSubmit={handleSearch}
     >
-      <div className="col-sm-8">
+      <div>
         <input
           type="text"
           placeholder="Buscar usuários"
-          className="form-control"
+          className="search-bar form-control"
         />
       </div>
-      <div className="col-sm-4">
+      <div>
         <button
           className="btn btn-primary"
           type="submit"
