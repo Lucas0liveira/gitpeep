@@ -13,8 +13,8 @@ export default function User() {
   useEffect(() => {
     async function fetchUser() {
       try {
-        const searchResult = await axios.get(`${BASE_URL}${username}`);
-        setUser(searchResult.data);
+        const response = await axios.get(`${BASE_URL}${username}`);
+        setUser(response.data);
       } catch (error) {
         setUser(null);
       }
