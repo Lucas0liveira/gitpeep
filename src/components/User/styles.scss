@@ -4,13 +4,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: black;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem;
 
-  .user-profile{
-    width: 100%;
+  &-profile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 22rem;
     
-    .user-avatar {
+    &-avatar {
       width: 10rem;
       height: 10rem;
+    }
+
+    &-stats {
+      width: fit-content !important;
+    }
 
     img {
       width: 100%;
@@ -18,6 +32,12 @@
       border-radius: 50%;
     }
   }
+
+  .buttons {
+    min-width: 12rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
   }
 }
 

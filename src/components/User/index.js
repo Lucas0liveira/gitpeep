@@ -10,35 +10,40 @@ export default function User({
       <div className="user">
         <p>{name}</p>
 
-        <div className="user-profile row ">
-          <div className="user-profile-avatar col-md-6">
+        <div className="user-profile ">
+          <div className="user-profile-avatar">
             <img
               src={avatar}
               alt="imagem do usuário"
             />
           </div>
-          <div className="user-profile-stats col-md-6">
-            <p>
-              <span>Repositórios: </span>
-              {reposQt}
+          <div className="user-profile-stats">
+            <p className="counter">
+              {'Repositórios: '}
+              <span className="counter-flavour__1">
+                {reposQt}
+              </span>
             </p>
-            <p>
-              <span>Seguidores: </span>
-              {followersQt}
+            <p className="counter">
+              {'Seguidores: '}
+              <span className="counter-flavour__2">
+                {followersQt}
+              </span>
             </p>
-            <p>
-              <span>Seguindo: </span>
-              {following}
+            <p className="counter">
+              {'Seguindo: '}
+              <span className="counter-flavour__3">
+                {following}
+              </span>
             </p>
           </div>
-
         </div>
         <p>
           @
           {login}
         </p>
         <p>{location}</p>
-        <p>
+        <p className="text-center">
           &quot;
           {bio}
           &quot;
@@ -48,6 +53,10 @@ export default function User({
             Visitar no GitHub
           </button>
         </a>
+        <div className="buttons">
+          <button className="btn btn-primary buttons-repos" type="button">Repos</button>
+          <button className="btn btn-primary buttons-starred" type="button">Starred</button>
+        </div>
       </div>
     </>
   );
