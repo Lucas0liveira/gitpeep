@@ -3,6 +3,7 @@ import { React, useState } from 'react';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import User from './components/User';
+import UserNotFound from './components/UserNotFound';
 import './App.scss';
 
 const BASE_URL = 'http://api.github.com/users/';
@@ -31,18 +32,18 @@ function App() {
       <div className="app">
         <SearchBar onSearch={handleSearch} />
         {user === ''
-          ? <div>vazio</div>
+          ? <UserNotFound />
           : (
             <User
               avatar={user.avatar_url}
               login={user.login}
-              url={user.url}
+              userUrl={user.html_url}
               name={user.name}
               location={user.location}
               bio={user.bio}
-              reposQt={user.public_repos}
-              followersQt={user.followers}
-              followingQt={user.following}
+              reposQt={String(user.public_repos)}
+              followersQt={String(user.followers)}
+              followingQt={String(user.following)}
             />
           )}
       </div>
