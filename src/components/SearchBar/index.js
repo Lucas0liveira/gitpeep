@@ -1,12 +1,30 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import './styles.scss';
 
-export default (props) => {
-  function handleSearch(event) {
+const BASE_URL = 'http://api.github.com/users/';
+
+export default () => {
+  const history = useHistory();
+
+  async function handleSearch(event) {
     event.preventDefault();
-    props.onSearch(event.target[0].value);
+    const searchString = event.target[0].value;
+
+    if (searchString.length === 0) {
+      history.push('/');
+      return;
+    }
+
+    try {
+      await axios.get(`${BASE_URL}${searchString}`);
+      history.push(`/user/${searchString}`);
+    } catch (error) {
+      history.push('/not-found');
+    }
   }
 
   return (
