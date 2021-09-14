@@ -33,13 +33,11 @@ export default () => {
       method="get"
       onSubmit={handleSearch}
     >
-      <div>
-        <input
-          type="text"
-          placeholder="Buscar usuários"
-          className="search-bar form-control"
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Buscar usuários"
+        className="search-bar form-control"
+      />
       <div>
         <button
           className="btn btn-primary"
