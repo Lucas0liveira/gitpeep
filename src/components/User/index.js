@@ -68,7 +68,7 @@ export default function User() {
             {user?.bio}
             &quot;
           </p>
-          <a href={user?.userUrl}>
+          <a href={user.html_url}>
             <button className="btn btn-primary" type="button">
               Visitar no GitHub
             </button>
