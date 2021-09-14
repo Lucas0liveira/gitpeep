@@ -4,6 +4,6 @@
 
 ## Iniciando o projeto
 
-`cd ./gitpeep`
-`npm start`
+- `cd ./gitpeep`
+- `npm start`
 
