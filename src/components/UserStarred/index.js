@@ -4,7 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
 import Starred from '../Starred';
 
-const BASE_URL = 'http://api.github.com/users/';
+import { BASE_URL } from '../../definitions';
 
 export default () => {
   const { username } = useParams();
@@ -24,20 +24,23 @@ export default () => {
   }, []);
 
   return (
-    <div>
-      <Link to={`/user/${username}`}>
-        <button
-          type="button"
-          className="btn btn-primary"
-        >
-          <FaArrowLeft />
-        </button>
-      </Link>
+    <div className="sheet">
+      <div className="header">
+        <Link to={`/user/${username}`}>
+          <button
+            type="button"
+            className="btn btn-primary"
+          >
+            <FaArrowLeft />
+          </button>
+        </Link>
+        <p className="h2 fw-bold">Starred</p>
+      </div>
 
       <div className="repos">
 
         {starredRepos.length === 0
-          ? <h1 className="mt-5"> Nada por aqui. </h1>
+          ? <p className="mt-5 h3"> Nada por aqui. </p>
           : starredRepos.map((starred) => (
             <Starred
               key={starred.id}

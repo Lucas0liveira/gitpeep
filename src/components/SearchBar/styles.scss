@@ -2,9 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 360px;
+  margin-bottom: 2rem;
 
-  &-bar {
+  &-bar{
     border: none;
+    width: 100%;
+    min-width: 280px;
+    max-width: 60rem;
+
+    border-radius: 8px;
+    background: #f0f0f0;
+    box-shadow:  6px -6px 12px #c1c1c1,
+                 -6px 6px 12px #ffffff;
   }
 }
