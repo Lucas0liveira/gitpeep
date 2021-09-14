@@ -3,8 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
 import Repo from '../Repo';
-
-const BASE_URL = 'http://api.github.com/users/';
+import { BASE_URL } from '../../definitions';
 
 export default () => {
   const { username } = useParams();

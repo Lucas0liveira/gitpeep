@@ -4,7 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
 import Starred from '../Starred';
 
-const BASE_URL = 'http://api.github.com/users/';
+import { BASE_URL } from '../../definitions';
 
 export default () => {
   const { username } = useParams();

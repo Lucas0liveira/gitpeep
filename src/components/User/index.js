@@ -3,8 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import SearchBar from '../SearchBar';
 import './styles.scss';
-
-const BASE_URL = 'http://api.github.com/users/';
+import { BASE_URL } from '../../definitions';
 
 export default function User() {
   const [user, setUser] = useState('');
