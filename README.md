@@ -1,6 +1,6 @@
 ## Deploy
 
-[https://gitpeep-oi27lgal9-lucas0liveira.vercel.app/]
+https://gitpeep-oi27lgal9-lucas0liveira.vercel.app/
 
 ## Iniciando o projeto
 
