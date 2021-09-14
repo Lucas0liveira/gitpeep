@@ -4,8 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import './styles.scss';
-
-const BASE_URL = 'http://api.github.com/users/';
+import { BASE_URL } from '../../definitions';
 
 export default () => {
   const history = useHistory();
@@ -34,13 +33,11 @@ export default () => {
       method="get"
       onSubmit={handleSearch}
     >
-      <div>
-        <input
-          type="text"
-          placeholder="Buscar usuários"
-          className="search-bar form-control"
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Buscar usuários"
+        className="search-bar form-control"
+      />
       <div>
         <button
           className="btn btn-primary"
