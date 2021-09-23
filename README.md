@@ -1,6 +1,8 @@
 ## Deploy
 
-https://gitpeep-oi27lgal9-lucas0liveira.vercel.app/
+O projeto foi implantado usando o Vercel, assim, já é possível utilizá-lo na web ou em um dispositivo móvel.
+
+https://gitpeepapp.vercel.app/
 
 ## Iniciando o projeto
 
